@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div><h3>用户列表</h3></div>
+<div>
+    <table border="1">
+        <tr>
+            <td>用户名</td>
+            <td>用户密码</td>
+            <td>用户权限</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="user,userStatus : ${userList}">
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td><a th:href="${'selectById?id=' + user.id}">修改</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
